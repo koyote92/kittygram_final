@@ -38,6 +38,6 @@ services:
     env_file: .env
     volumes:
       - static_kittygram:/staticfiles
-      - media_kittygram:/app/media
+      - media_kittygram:/media
     ports:
       - "9000:80"
