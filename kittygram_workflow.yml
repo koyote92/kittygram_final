@@ -57,7 +57,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: ./backend/
-        platforms: linux/arm64/v8
+        platforms: linux/arm64
         push: true
         tags: koyote92/kittygram_backend:latest
   frontend_tests:
@@ -97,7 +97,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: ./frontend/
-        platforms: linux/arm64/v8
+        platforms: linux/arm64
         push: true
         tags: koyote92/kittygram_frontend:latest
   build_gateway_and_push_to_docker_hub:
@@ -117,7 +117,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: ./nginx/
-        platforms: linux/arm64/v8
+        platforms: linux/arm64
         push: true
         tags: koyote92/kittygram_gateway:latest
   deploy:
