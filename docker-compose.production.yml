@@ -15,6 +15,7 @@ services:
     env_file: .env
     volumes:
       - pg_data_kittygram:/var/lib/postgresql/data
+    restart: always
 
   backend:
     image: koyote92/kittygram_backend
@@ -25,6 +26,7 @@ services:
       - media_kittygram:/app/media
     depends_on:
       - db
+    restart: on-failure
 
   frontend:
     image: koyote92/kittygram_frontend
@@ -35,6 +37,7 @@ services:
       - static_kittygram:/frontend_static
     depends_on:
       - backend
+    restart: no
 
   gateway:
     image: koyote92/kittygram_gateway
@@ -47,3 +50,4 @@ services:
       - "9000:80"
     depends_on:
       - backend
+    restart: always
