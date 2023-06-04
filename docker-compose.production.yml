@@ -47,7 +47,7 @@ services:
       - static_kittygram:/staticfiles
       - media_kittygram:/media
     ports:
-      - "9000:80"
+      - ${NGINX_PORT}:80
     depends_on:
       - backend
     restart: always
