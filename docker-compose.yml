@@ -35,8 +35,6 @@ services:
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_kittygram:/frontend_static
-    depends_on:
-      - backend
     restart: no
 
   gateway:
