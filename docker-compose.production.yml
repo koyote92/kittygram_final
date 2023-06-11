@@ -47,7 +47,7 @@ services:
       - static_kittygram:/staticfiles
       - media_kittygram:/media
     ports:
-      - ${NGINX_PORT}:{HOST_PORT}
+      - ${NGINX_PORT}:${HOST_PORT}
     depends_on:
       - backend
     restart: always
