@@ -18,7 +18,7 @@ services:
     restart: always
 
   backend:
-    image: koyote92/kittygram_backend
+    image: xiaoan115/kittygram_backend
     container_name: kittygram_backend
     env_file: .env
     volumes:
@@ -29,7 +29,7 @@ services:
     restart: on-failure
 
   frontend:
-    image: koyote92/kittygram_frontend
+    image: xiaoan115/kittygram_frontend
     container_name: kittygram_frontend
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
@@ -40,7 +40,7 @@ services:
     restart: no
 
   gateway:
-    image: koyote92/kittygram_gateway
+    image: xiaoan115/kittygram_gateway
     container_name: kittygram_gateway
     env_file: .env
     volumes:
